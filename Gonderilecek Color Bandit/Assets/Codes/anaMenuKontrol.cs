@@ -39,18 +39,33 @@ public class anaMenuKontrol : MonoBehaviour
 
     public void oyunaGitTur()
     {
+
+        ShuttleKontrol.oyunBittiTemas = true;
+        ShuttleKontrol.oyunBittiBosGecis = true;
+        Time.timeScale = 1;
+
         SceneManager.LoadScene("GameTur");
 
     }
 
     public void LanguagesEng()
     {
+
+        ShuttleKontrol.oyunBittiTemas = true;
+        ShuttleKontrol.oyunBittiBosGecis = true;
+        Time.timeScale = 1;
+
         SceneManager.LoadScene("LanguagesEng");
 
     }
 
     public void AnaMenuTurkce()
     {
+
+        ShuttleKontrol.oyunBittiTemas = true;
+        ShuttleKontrol.oyunBittiBosGecis = true;
+        Time.timeScale = 1;
+
         SceneManager.LoadScene("MainMenuTur");
 
 
@@ -59,6 +74,11 @@ public class anaMenuKontrol : MonoBehaviour
 
     public void AnaMenuEnglish()
     {
+
+        ShuttleKontrol.oyunBittiTemas = true;
+        ShuttleKontrol.oyunBittiBosGecis = true;
+        Time.timeScale = 1;
+
         SceneManager.LoadScene("MainMenuEng");
 
 
@@ -66,11 +86,21 @@ public class anaMenuKontrol : MonoBehaviour
 
     public void LanguagesTur()
     {
+
+        ShuttleKontrol.oyunBittiTemas = true;
+        ShuttleKontrol.oyunBittiBosGecis = true;
+        Time.timeScale = 1;
+
         SceneManager.LoadScene("LanguagesTur");
 
     }
     public void oyunaGitEng()
     {
+
+        ShuttleKontrol.oyunBittiTemas = true;
+        ShuttleKontrol.oyunBittiBosGecis = true;
+        Time.timeScale = 1;
+
         SceneManager.LoadScene("GameEng");
 
     }

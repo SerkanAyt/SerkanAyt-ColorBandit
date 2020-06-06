@@ -34,16 +34,21 @@ public class ShuttleKontrol : MonoBehaviour
     int enYuksekPuan = 0;
     int sayac = 0;
 
-    public static bool oyunBittiTemas = true;
-    public static bool oyunBittiBosGecis = true;
+   
 
     ShuttleKontrol araba;
 
-
+    public static bool oyunBittiTemas = true;
+    public static bool oyunBittiBosGecis = true;
 
     void Start()
     {
+
         
+
+        
+
+
         enYuksekPuan = PlayerPrefs.GetInt("enYuksekPuanKayit");
         
         cemberrenkleri[0] = new Color32((byte)255, (byte)243,(byte)0,(byte) 255);
@@ -84,9 +89,9 @@ public class ShuttleKontrol : MonoBehaviour
         //if (transform.position.y < 1.2)
         {
             kameraKontrol();
-            Debug.Log(kamera.transform.position + "Kamera transform position");
-            Debug.Log(kameraIlkPos + "Ilk pos");
-            Debug.Log(kameraSonPos + "Kamera son pos.");
+            //Debug.Log(kamera.transform.position + "Kamera transform position");
+            //Debug.Log(kameraIlkPos + "Ilk pos");
+            //Debug.Log(kameraSonPos + "Kamera son pos.");
         }
     }
 
@@ -133,27 +138,27 @@ public class ShuttleKontrol : MonoBehaviour
             if (uzaymekigi.GetComponent<Renderer>().material.color == new Color32((byte)255, (byte)243, (byte)0, (byte)255))
             {
                 uzaymekigi.tag = "yellow";
-                Debug.Log("TAG DEGİSTİRİLDİ");
+                //Debug.Log("TAG DEGİSTİRİLDİ");
             }
             if (uzaymekigi.GetComponent<Renderer>().material.color == new Color32((byte)255, (byte)18, (byte)34, (byte)255))
             {
                 uzaymekigi.tag = "red";
-                Debug.Log("TAG DEGİSTİRİLDİ");
+                //Debug.Log("TAG DEGİSTİRİLDİ");
             }
             if (uzaymekigi.GetComponent<Renderer>().material.color == new Color32((byte)97, (byte)255, (byte)45, (byte)255))
             {
                 uzaymekigi.tag = "green";
-                Debug.Log("TAG DEGİSTİRİLDİ");
+                //Debug.Log("TAG DEGİSTİRİLDİ");
             }
             if (uzaymekigi.GetComponent<Renderer>().material.color == new Color32((byte)217, (byte)35, (byte)222, (byte)255))
             {
                 uzaymekigi.tag = "magenta";
-                Debug.Log("TAG DEGİSTİRİLDİ");
+                //Debug.Log("TAG DEGİSTİRİLDİ");
             }
             if (uzaymekigi.GetComponent<Renderer>().material.color == new Color32((byte)59, (byte)192, (byte)255, (byte)255))
             {
                 uzaymekigi.tag = "blue";
-                Debug.Log("TAG DEGİSTİRİLDİ");
+                //Debug.Log("TAG DEGİSTİRİLDİ");
             }
         }
 
@@ -162,6 +167,8 @@ public class ShuttleKontrol : MonoBehaviour
         if (other.gameObject.tag == uzaymekigi.tag)
         {
             puan++;
+            Debug.Log(puan);
+
             puantext.text = "Score= " + puan;
         }
 
@@ -169,7 +176,7 @@ public class ShuttleKontrol : MonoBehaviour
         if (other.gameObject.tag == "sayaccollider")
         {
             sayac++;
-            //Debug.Log(sayac);
+            Debug.Log(sayac);
 
             if (sayac > puan)
             {

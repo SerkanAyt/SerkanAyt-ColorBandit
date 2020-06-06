@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: d436f0df6344ae14cb5ef9a932cfaf45
-  - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: e66672dddde56a44b966298965ecd02b
-  - enabled: 1
     path: Assets/Scenes/MainMenuTur.unity
     guid: f7e3bb9cf7aeff4418425f77df0f3777
   - enabled: 1
@@ -29,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameEng.unity
     guid: 1e88a96ff794ca3408abbc80ce8b2cdf
+  - enabled: 1
+    path: Assets/Scenes/reklamladevametmeeng.unity
+    guid: fdd5899ecd46ebd4f9fc59e0b7ad5192
+  - enabled: 1
+    path: Assets/Scenes/reklamladevametmetur.unity
+    guid: cd86609d1e0afb843a384d812064dff3
   m_configObjects: {}

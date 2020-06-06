@@ -9,6 +9,8 @@ using UnityEngine.UI;
 public class oyunkontrol : MonoBehaviour
 {
     
+
+
     public GameObject altigenplatform1;
     public GameObject altigenplatform2;
     public GameObject cemberGrubu;
@@ -17,6 +19,7 @@ public class oyunkontrol : MonoBehaviour
     GameObject[] textGrubuDizisi;
     GameObject[] cocuklar;
     GameObject[] textCocuklar;
+    GameObject sayaccollider;
     
 
     Rigidbody fizikbir;
@@ -84,8 +87,15 @@ public class oyunkontrol : MonoBehaviour
 
     void Start()
     {
+
+        ShuttleKontrol.oyunBittiTemas = true;
+        ShuttleKontrol.oyunBittiBosGecis = true;
+        Time.timeScale = 1;
+
+
+
         //Instantiate(blueText, new Vector3(0.856f, 0.357f, -300f), Quaternion.Euler(0,180,0));
-       // Vektör listesi oluşturuldu ve her biri belirlenen konumlara atandı.
+        // Vektör listesi oluşturuldu ve her biri belirlenen konumlara atandı.
         vektorDizisi = new Vector3[5];
         textVektorDizisi = new Vector3[5];
         
@@ -309,19 +319,19 @@ public class oyunkontrol : MonoBehaviour
         if (ShuttleKontrol.oyunBittiBosGecis == false)
         {
 
-            //Şimdilik oyunun bittiğini görelim diye menüye gönderiyorum. Bos gecis icin animasyon ve panel gelişi ayarlanacak.
-            // BosGecisBitis()
+           
             Time.timeScale = 0.3f;
 
-            olumarkaplansayaci += 0.02f;
+            olumarkaplansayaci += 0.005f;
             olumarkaplan.color = new Color(0, 0, 0, olumarkaplansayaci);
 
+            Invoke("BosGecisBitis",0.5f);
 
 
 
 
 
-            Invoke("BosGecisBitis", 0.5f);
+
 
         }
     }
@@ -331,14 +341,26 @@ public class oyunkontrol : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "GameEng")
         {
+
+
+
             SceneManager.LoadScene("reklamladevametmeeng");
-
-
         }
+
         if (SceneManager.GetActiveScene().name == "GameTur")
         {
-            SceneManager.LoadScene("MainMenuTur");
+
+
+
+            SceneManager.LoadScene("reklamladevametmetur");
         }
+
+
+
+
+
+
+
 
     }
 
@@ -346,14 +368,35 @@ public class oyunkontrol : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "GameEng")
         {
+
             SceneManager.LoadScene("reklamladevametmeeng");
-
-
         }
+
+
         if (SceneManager.GetActiveScene().name == "GameTur")
         {
-            SceneManager.LoadScene("MainMenuTur");
+
+            SceneManager.LoadScene("reklamladevametmetur");
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 
