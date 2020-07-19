@@ -119,8 +119,8 @@ public class ShuttleKontrol : MonoBehaviour
 
                 case TouchPhase.Moved:
                     Debug.Log("phase move girildi");
-                    transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * 0.01f,
-                    transform.position.y + touch.deltaPosition.y * 0.01f,
+                    transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * 0.002f,
+                    transform.position.y + touch.deltaPosition.y * 0.002f,
                     transform.position.z);
                     break;
                 case TouchPhase.Ended:

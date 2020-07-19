@@ -344,7 +344,7 @@ public class oyunkontrol : MonoBehaviour
 
 
 
-            SceneManager.LoadScene("reklamladevametmeeng");
+            SceneManager.LoadScene("MainMenuEng");
         }
 
         if (SceneManager.GetActiveScene().name == "GameTur")
@@ -352,7 +352,7 @@ public class oyunkontrol : MonoBehaviour
 
 
 
-            SceneManager.LoadScene("reklamladevametmetur");
+            SceneManager.LoadScene("MainMenuTur");
         }
 
 
@@ -369,14 +369,14 @@ public class oyunkontrol : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "GameEng")
         {
 
-            SceneManager.LoadScene("reklamladevametmeeng");
+            SceneManager.LoadScene("MainMenuEng");
         }
 
 
         if (SceneManager.GetActiveScene().name == "GameTur")
         {
 
-            SceneManager.LoadScene("reklamladevametmetur");
+            SceneManager.LoadScene("MainMenuTur");
         }
 
 
