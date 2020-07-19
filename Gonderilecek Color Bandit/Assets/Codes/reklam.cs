@@ -1,25 +1,25 @@
-﻿//using System.Collections;
-//using System.Collections.Generic;
-//using UnityEngine;
-//using GoogleMobileAds.Api;
+﻿////using System.Collections;
+////using System.Collections.Generic;
+////using UnityEngine;
+////using GoogleMobileAds.Api;
 
-//public class reklam : MonoBehaviour
-//{
-//    InterstitialAd interstitial;
+////public class reklam : MonoBehaviour
+////{
+////    InterstitialAd interstitial;
 
-//    static reklam reklamKontrol;
-//    private string adUnitID;
+////    static reklam reklamKontrol;
+////    private string adUnitID;
 
-//    void Start()
+////    void Start()
 
-//    {
-//        if(reklamKontrol==null)
+////    {
+////        if(reklamKontrol==null)
 
-//        {
-//            DontDestroyOnLoad(gameObject);
-//            reklamKontrol = this;
+////        {
+////            DontDestroyOnLoad(gameObject);
+////            reklamKontrol = this;
 
-
+//<<<<<<< HEAD
 //            //1. aşama----------------------------------
 //#if UNITY_ANDROID
 //            string appID = "ca-app-pub-5881142327850120~9950362933";
@@ -28,43 +28,55 @@
 //#else
 //        string appID="unexpected_platform";
 //#endif
-//            MobileAds.Initialize(appID);
+//                MobileAds.Initialize(appID);
+//=======
+//>>>>>>> 70c38eb61286e9b3a036a6d175486990b50bafd1
 
-//            //2. aşama ------------------------------
-//#if UNITY_ANDROID
-//            string adUnitID = "ca-app-pub-39402560999425544/1033173712";
-//#elif UNITY_IPHONE
-//        string adunitID="";
-//#else
-//        string adunitID="unexpected_platform";
-//#endif
+////            //1. aşama----------------------------------
+////#if UNITY_ANDROID
+////            string appID = "ca-app-pub-5881142327850120~9950362933";
+////#elif UNITY_IPHONE
+////        string appID="";
+////#else
+////        string appID="unexpected_platform";
+////#endif
+////            MobileAds.Initialize(appID);
 
-//            interstitial = new InterstitialAd(adUnitID);
+////            //2. aşama ------------------------------
+////#if UNITY_ANDROID
+////            string adUnitID = "ca-app-pub-39402560999425544/1033173712";
+////#elif UNITY_IPHONE
+////        string adunitID="";
+////#else
+////        string adunitID="unexpected_platform";
+////#endif
 
-//            //3.aşama---------------------------------
+////            interstitial = new InterstitialAd(adUnitID);
 
-//            AdRequest request = new AdRequest.Builder().AddTestDevice(AdRequest.TestDeviceSimulator).AddTestDevice("2077ef9a63d2b398840261c8221a0c9b").Build();
-//            interstitial.LoadAd(request);
+////            //3.aşama---------------------------------
 
-//            //4.aşama-----------------------------------
+////            AdRequest request = new AdRequest.Builder().AddTestDevice(AdRequest.TestDeviceSimulator).AddTestDevice("2077ef9a63d2b398840261c8221a0c9b").Build();
+////            interstitial.LoadAd(request);
 
-
-//        }
-//        else
-//        {
-//            Destroy(gameObject);
-//        }
+////            //4.aşama-----------------------------------
 
 
+////        }
+////        else
+////        {
+////            Destroy(gameObject);
+////        }
 
-//    }
 
-//    public void reklamiGoster()
-//    {
-//        if (interstitial.IsLoaded())
-//        {
-//            interstitial.Show();
-//        }
 
-//    }
-//}
+////    }
+
+////    public void reklamiGoster()
+////    {
+////        if (interstitial.IsLoaded())
+////        {
+////            interstitial.Show();
+////        }
+
+////    }
+////}
