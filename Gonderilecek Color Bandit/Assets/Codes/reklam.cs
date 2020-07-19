@@ -26,7 +26,7 @@ public class reklam : MonoBehaviour
 #else
         string appID="unexpected_platform";
 #endif
-            MobileAds.Initialize(appID);
+                MobileAds.Initialize(appID);
 
             //2. aşama ------------------------------
 #if UNITY_ANDROID
