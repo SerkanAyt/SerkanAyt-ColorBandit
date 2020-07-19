@@ -119,8 +119,8 @@ public class ShuttleKontrol : MonoBehaviour
 
                 case TouchPhase.Moved:
                     Debug.Log("phase move girildi");
-                    transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * 0.01f,
-                    transform.position.y + touch.deltaPosition.y * 0.01f,
+                    transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * 0.002f,
+                    transform.position.y + touch.deltaPosition.y * 0.002f,
                     transform.position.z);
                     break;
                 case TouchPhase.Ended:
@@ -315,82 +315,82 @@ public class ShuttleKontrol : MonoBehaviour
     {
 
 
-        //    //Zıt tuşa basıldığında önce rotasyon 0 a gelmeli daha sonra diğer yöne dönmeli. (SAĞLANDI)
-        //    // Herhangi bir tuşa basılmadığında 0 rotasyonuna dönmesi isteniyor.
-        //    //SORUN!!! -40 rotasyonunda 0.5 saniyelik bir bekleme yaptıktan sonra başlıyor 0 rotasyonu dönüşe.Çünkü hız -1 den 0 a yavaş yavaş geliyor tuşa basmayı bıraktığımızda.
-        //    //SORUN Mobil entegrasyon kısmında yeniden gözden geçirilecek.
-        //    if (fizik.velocity.x == 0)
-        //    {
-        //        //YatayDonus degerimiz ekside kaldıysa 3 eklenecek artıda kaldıysa 3 çıkartılacak ve eski konuma dönüş sağlanacak.
-        //        if (yatayDonus < 0)
-        //        {
-        //            transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
-        //            yatayDonus = yatayDonus + 3;
-        //        }
-        //        if (yatayDonus > 0)
-        //        {
-        //            transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
-        //            yatayDonus = yatayDonus - 3;
-        //        }
-        //    }
-        //    //Eğer cisim sola doğru gidiyorsa yatayDonus degiskenine -3 ekle ve -40 a ulaştığında sınırla.
-        //    if (fizik.velocity.x < 0)
-        //    {
-        //        transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
-        //        yatayDonus = yatayDonus - 3;
-        //        if (yatayDonus < -40)
-        //        {
-        //            yatayDonus = -40;
-        //        }
-        //    }
-        //    //Cisim sağa gitmeye başladıysa yatayDonuse 3 er 3 er ekle. Sola yatık olan mekik 0 rotasyonuna ışınlanmadan önce 0 a sonra 40 a gidebilsin böylece.
-        //    if (fizik.velocity.x > 0)
-        //    {
-        //        transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
-        //        yatayDonus = yatayDonus + 3;
-        //        if (yatayDonus > 40)
-        //        {
-        //            yatayDonus = 40;
-        //        }
-
-        //    }
-        //    //---------------------- Şimdi aynılarını dikey harekey için
-        //    if (fizik.velocity.y == 0)
-        //    {
-        //        //YatayDonus degerimiz ekside kaldıysa 3 eklenecek artıda kaldıysa 3 çıkartılacak ve eski konuma dönüş sağlanacak.
-        //        if (dikeyDonus < 0)
-        //        {
-        //            transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
-        //            dikeyDonus = dikeyDonus + 3;
-        //        }
-        //        if (dikeyDonus > 0)
-        //        {
-        //            transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
-        //            dikeyDonus = dikeyDonus - 3;
-        //        }
-        //    }
-        //    //Eğer cisim sola doğru gidiyorsa yatayDonus degiskenine -3 ekle ve -40 a ulaştığında sınırla.
-        //    if (fizik.velocity.y < 0)
-        //    {
-        //        transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
-        //        dikeyDonus = dikeyDonus - 3;
-        //        if (dikeyDonus < -30)
-        //        {
-        //            dikeyDonus = -30;
-        //        }
-        //    }
-        //    //Cisim sağa gitmeye başladıysa yatayDonuse 3 er 3 er ekle. Sola yatık olan mekik 0 rotasyonuna ışınlanmadan önce 0 a sonra 40 a gidebilsin böylece.
-        //    if (fizik.velocity.y > 0)
-        //    {
-        //        transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
-        //        dikeyDonus = dikeyDonus + 3;
-        //        if (dikeyDonus > 30)
-        //        {
-        //            dikeyDonus = 30;
-        //        }
-
-        //    }
+        //Zıt tuşa basıldığında önce rotasyon 0 a gelmeli daha sonra diğer yöne dönmeli. (SAĞLANDI)
+        // Herhangi bir tuşa basılmadığında 0 rotasyonuna dönmesi isteniyor.
+        //SORUN!!! -40 rotasyonunda 0.5 saniyelik bir bekleme yaptıktan sonra başlıyor 0 rotasyonu dönüşe.Çünkü hız -1 den 0 a yavaş yavaş geliyor tuşa basmayı bıraktığımızda.
+        //SORUN Mobil entegrasyon kısmında yeniden gözden geçirilecek.
+        if (fizik.velocity.x == 0)
+        {
+            //YatayDonus degerimiz ekside kaldıysa 3 eklenecek artıda kaldıysa 3 çıkartılacak ve eski konuma dönüş sağlanacak.
+            if (yatayDonus < 0)
+            {
+                transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
+                yatayDonus = yatayDonus + 3;
+            }
+            if (yatayDonus > 0)
+            {
+                transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
+                yatayDonus = yatayDonus - 3;
+            }
         }
+        //Eğer cisim sola doğru gidiyorsa yatayDonus degiskenine -3 ekle ve -40 a ulaştığında sınırla.
+        if (fizik.velocity.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
+            yatayDonus = yatayDonus - 3;
+            if (yatayDonus < -40)
+            {
+                yatayDonus = -40;
+            }
+        }
+        //Cisim sağa gitmeye başladıysa yatayDonuse 3 er 3 er ekle. Sola yatık olan mekik 0 rotasyonuna ışınlanmadan önce 0 a sonra 40 a gidebilsin böylece.
+        if (fizik.velocity.x > 0)
+        {
+            transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
+            yatayDonus = yatayDonus + 3;
+            if (yatayDonus > 40)
+            {
+                yatayDonus = 40;
+            }
+
+        }
+        //---------------------- Şimdi aynılarını dikey harekey için
+        if (fizik.velocity.y == 0)
+        {
+            //YatayDonus degerimiz ekside kaldıysa 3 eklenecek artıda kaldıysa 3 çıkartılacak ve eski konuma dönüş sağlanacak.
+            if (dikeyDonus < 0)
+            {
+                transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
+                dikeyDonus = dikeyDonus + 3;
+            }
+            if (dikeyDonus > 0)
+            {
+                transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
+                dikeyDonus = dikeyDonus - 3;
+            }
+        }
+        //Eğer cisim sola doğru gidiyorsa yatayDonus degiskenine -3 ekle ve -40 a ulaştığında sınırla.
+        if (fizik.velocity.y < 0)
+        {
+            transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
+            dikeyDonus = dikeyDonus - 3;
+            if (dikeyDonus < -30)
+            {
+                dikeyDonus = -30;
+            }
+        }
+        //Cisim sağa gitmeye başladıysa yatayDonuse 3 er 3 er ekle. Sola yatık olan mekik 0 rotasyonuna ışınlanmadan önce 0 a sonra 40 a gidebilsin böylece.
+        if (fizik.velocity.y > 0)
+        {
+            transform.rotation = Quaternion.Euler(-dikeyDonus, 0, -yatayDonus);
+            dikeyDonus = dikeyDonus + 3;
+            if (dikeyDonus > 30)
+            {
+                dikeyDonus = 30;
+            }
+
+        }
+    }
 
 
 
