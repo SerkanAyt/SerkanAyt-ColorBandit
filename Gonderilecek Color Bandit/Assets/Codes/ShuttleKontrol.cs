@@ -42,6 +42,8 @@ public class ShuttleKontrol : MonoBehaviour
     public static bool oyunBittiTemas = true;
     public static bool oyunBittiBosGecis = true;
 
+    private Touch touch;
+
     void Start()
     {
 
@@ -72,32 +74,12 @@ public class ShuttleKontrol : MonoBehaviour
 
     private void Update()
     {
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-
-            Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
-
-            switch(touch.phase)
-            {
-                case TouchPhase.Began:
-                    deltaX = touchPos.x - transform.position.x;
-                    deltaY = touchPos.y - transform.position.y;
-                    break;
-
-                case TouchPhase.Moved:
-                    fizik.MovePosition(new Vector2(touchPos.x - deltaX, touchPos.y - deltaY));
-                    break;
-                case TouchPhase.Ended:
-                    fizik.velocity = new Vector3(0, 0, fizik.velocity.z);
-                    break;
-            }
-        }
+       
 
 
 
 
-
+       
 
 
 
@@ -109,6 +91,45 @@ public class ShuttleKontrol : MonoBehaviour
     //Hareket ve mekik rotasyon kodları:
     void FixedUpdate()
     {
+        if (Input.touchCount > 0)
+        {
+            //touch = Input.GetTouch(0);
+
+            //if (touch.phase == TouchPhase.Moved)
+            //{
+            //    transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * 0.01f,
+            //        transform.position.y + touch.deltaPosition.y * 0.01f,
+            //        transform.position.z);
+            //}
+
+
+            Debug.Log("ilk ife girdi");
+            Touch touch = Input.GetTouch(0);
+
+            Vector2 touchPos = Camera.main.ScreenToWorldPoint(new Vector2(touch.position.x, touch.position.y));
+            Debug.Log(touchPos);
+            Debug.Log(touch.position);
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    Debug.Log("phase began girildi");
+                    deltaX = touchPos.x - transform.position.x;
+                    deltaY = touchPos.y - transform.position.y;
+                    break;
+
+                case TouchPhase.Moved:
+                    Debug.Log("phase move girildi");
+                    transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * 0.01f,
+                    transform.position.y + touch.deltaPosition.y * 0.01f,
+                    transform.position.z);
+                    break;
+                case TouchPhase.Ended:
+                    Debug.Log("phase ended girildi");
+                    fizik.velocity = new Vector3(0, 0, fizik.velocity.z);
+                    break;
+            }
+
+        }
         // Hareket kodu oluşturuldu. GetAxisRaw yerine getaxis kullanıldı. Rotasyonu verirken bir anda değil de kademe kademe rotasyon olması için.
         //float yatay = Input.GetAxis("Horizontal");
         //float dikey = Input.GetAxis("Vertical");
@@ -124,6 +145,7 @@ public class ShuttleKontrol : MonoBehaviour
     //Kamera olayları:
     void LateUpdate()
     {
+       
         //if (transform.position.y < 1.2)
         {
             kameraKontrol();
